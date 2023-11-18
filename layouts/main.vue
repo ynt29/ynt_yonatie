@@ -2,7 +2,8 @@
   <div>
     <v-layout class="main-page">
       <v-app-bar prominent :elevation="0">
-        <v-toolbar-title class="text-white">Tie</v-toolbar-title>
+        <v-toolbar-title class="text-white d-inline-flex d-md-none">Tie</v-toolbar-title>
+        <v-toolbar-title class="text-white d-none d-md-inline-flex">Yossakorn Napeang</v-toolbar-title>
         <v-spacer></v-spacer>
         <template
           v-for="(item, index) in linkedList"

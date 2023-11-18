@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="d-flex flex-column w-full ma-4 text-white">
-        <article class="d-flex flex-column align-center mb-4">
+        <article class="d-flex flex-column flex-md-row align-center mb-4">
             <img
                 src="@/assets/images/mypic.png"
                 alt="mypic"
                 class="mypic mb-2"
             />
-            <h1 class="name-title text-center">
+            <h1 class="name-title text-center mx-md-4">
                 Yossakorn 
                 <br />
                 "Tie" 
@@ -41,53 +41,62 @@
                 in embarking on this journey. and I confident that these qualities will enable me to excel in the field of data analytics.
             </p>
         </article>
-        <article class="mb-7">
-            <p class="mb-4 subtitle">Job Experience</p>
-            <p class="mb-1">Junior Frontend Developer at Looloo Technology</p>
-            <p class="">Feb 2022 - Current</p>
-            <ul class="ma-4">
-                <li>Collaborated with cross-functional teams, 
-                    including UX/UI designers and backend developers to implement responsive and visually appealing web applicationsusing the Vue.JS Framework.
-                </li>
-                <li>Contributed to the development of an Enterprise Resource Planning (ERP) website for a fertilizer brand, improving user experience through the design of responsive interfaces.
-                </li>
-                <li>Contributed to the development of a student mentoring website for a university, improving the user interface for a more user-friendly website, 
-                    proactively debugging user issues related to UI promptly to maintain efficient usability.
-                </li>
-                <li>Demonstrated a commitment to continuous learning of new developer frameworks, libraries and tools such as CSS Frameworks (Bootstrap, Tailwind, Vuetify) 
-                    and JavaScript Framework (Vue.JS, Nuxt.JS)
-                </li>
-            </ul>
+        <article class="mb-7 d-flex flex-column flex-md-row">
+            <article class="width-define">
+                <p class="mb-4 subtitle">Job Experience</p>
+                <p class="mb-1">Junior Frontend Developer at Looloo Technology</p>
+                <p class="">Feb 2022 - Current</p>
+                <ul class="ma-4">
+                    <li>Collaborated with cross-functional teams, 
+                        including UX/UI designers and backend developers to implement responsive and visually appealing web applicationsusing the Vue.JS Framework.
+                    </li>
+                    <li>Contributed to the development of an Enterprise Resource Planning (ERP) website for a fertilizer brand, improving user experience through the design of responsive interfaces.
+                    </li>
+                    <li>Contributed to the development of a student mentoring website for a university, improving the user interface for a more user-friendly website, 
+                        proactively debugging user issues related to UI promptly to maintain efficient usability.
+                    </li>
+                    <li>Demonstrated a commitment to continuous learning of new developer frameworks, libraries and tools such as CSS Frameworks (Bootstrap, Tailwind, Vuetify) 
+                        and JavaScript Framework (Vue.JS, Nuxt.JS)
+                    </li>
+                </ul>
+            </article>
+            <article class="width-define">
+                <p class="mb-4 subtitle">Skills</p>
+                <p class="mb-1">Data Analytics</p>
+                <ul class="ma-4">
+                    <li                 
+                        v-for="(da, daIndex) in dataAnalyticSkills"
+                        :key="daIndex"
+                    >
+                        {{ da.name }}
+                    </li>
+                </ul>
+                <p class="mb-1">Frontend Developer</p>
+                <ul class="ma-4">
+                    <li                 
+                        v-for="(fe, feIndex) in frontendSkills"
+                        :key="feIndex"
+                    >
+                        {{ fe.name }}
+                    </li>
+                </ul>
+                <p class="mb-1">General Skills</p>
+                <ul class="ma-4">
+                    <li                 
+                        v-for="(ge, geIndex) in generalSkills"
+                        :key="geIndex"
+                    >
+                        {{ ge.name }}
+                    </li>
+                </ul>
+            </article>
         </article>
         <article class="mb-7">
-            <p class="mb-4 subtitle">Skills</p>
-            <p class="mb-1">Data Analytics</p>
-            <ul class="ma-4">
-                <li                 
-                    v-for="(da, daIndex) in dataAnalyticSkills"
-                    :key="daIndex"
-                >
-                    {{ da.name }}
-                </li>
-            </ul>
-            <p class="mb-1">Frontend Developer</p>
-            <ul class="ma-4">
-                <li                 
-                    v-for="(fe, feIndex) in frontendSkills"
-                    :key="feIndex"
-                >
-                    {{ fe.name }}
-                </li>
-            </ul>
-            <p class="mb-1">General Skills</p>
-            <ul class="ma-4">
-                <li                 
-                    v-for="(ge, geIndex) in generalSkills"
-                    :key="geIndex"
-                >
-                    {{ ge.name }}
-                </li>
-            </ul>
+            <Project
+                v-for="(project, index) in projects"
+                :key="index"
+                :project-detail="project"
+            />
         </article>
     </div>
   </div>
@@ -122,10 +131,77 @@ const generalSkills = ref([
     { name: "Collaboration" }
 ])
 
+const projects = ref([
+    {
+        name: "Personal Financial Dashboard",
+        project_image: 'img_placeholder.png',
+        project_type: [
+            { name: "Data Analyst" },
+        ],
+        project_tools: [
+            { name: "Google Sheets" },
+            { name: "Python" },
+            { name: "Looker Studio" }
+        ],
+        description: "My Personal Financial ngaila",
+        process: [
+            { name: "Scraping" },
+            { name: "Pivoting" },
+            { name: "Make a Dashboard" }
+        ],
+        key_findings: [
+            { name: "20% of aaaaaaa is bbbbbb" },
+            { name: "1% of bbbbb are ccccc" },
+            { name: "1% of ssss is nnnnnn" }
+        ],
+        recommendation: [
+            { name: "xxxxxxxxxxxxxx" },
+            { name: "yyyyyyyyyyyyyy" }
+        ]
+    },
+    {
+        name: "Personal Financial Dashboard",
+        project_image: 'img_placeholder.png',
+        project_type: [
+            { name: "Data Analyst" },
+        ],
+        project_tools: [
+            { name: "Google Sheets" },
+            { name: "Python" },
+            { name: "Looker Studio" }
+        ],
+        description: "My Personal Financial ngaila",
+        process: [
+            { name: "Scraping" },
+            { name: "Pivoting" },
+            { name: "Make a Dashboard" }
+        ],
+        key_findings: [
+            { name: "20% of aaaaaaa is bbbbbb" },
+            { name: "1% of bbbbb are ccccc" },
+            { name: "1% of ssss is nnnnnn" }
+        ],
+        recommendation: [
+            { name: "xxxxxxxxxxxxxx" },
+            { name: "yyyyyyyyyyyyyy" }
+        ]
+    },
+])
+
 </script>
 
 <style scoped lang="scss">
 :deep() {
+    .width-define {
+        width: 100%
+    }
+
+    @media (min-width: 961px) {
+        .width-define {
+            width: 50%
+        }
+    }
+
     .mypic {
         object-fit: cover;
         border-radius: 8px;
