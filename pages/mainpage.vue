@@ -1,8 +1,21 @@
 <template>
   <div>
-    <!-- <div class="d-flex flex-column w-full ma-4 text-white">
-        <div>Pictures</div>
-        <div class="mb-4">
+    <div class="d-flex flex-column w-full ma-4 text-white">
+        <article class="d-flex flex-column align-center mb-4">
+            <img
+                src="@/assets/images/mypic.png"
+                alt="mypic"
+                class="mypic mb-2"
+            />
+            <h1 class="name-title text-center">
+                Yossakorn 
+                <br />
+                "Tie" 
+                <br />
+                Napeang
+            </h1>
+        </article>
+        <article class="mb-7">
             <p class="mb-2">I’m a Junior Frontend Developer 
                 from Bangkok, Thailand, with a passionate interest in the world of data analytics.
             </p>
@@ -27,9 +40,9 @@
                 However, my commitment to learning unfamiliar things like frontend development and not giving up even when it’s difficult has led to success 
                 in embarking on this journey. and I confident that these qualities will enable me to excel in the field of data analytics.
             </p>
-        </div>
-        <div class="mb-4">
-            <p class="mb-4">Job Experience</p>
+        </article>
+        <article class="mb-7">
+            <p class="mb-4 subtitle">Job Experience</p>
             <p class="mb-1">Junior Frontend Developer at Looloo Technology</p>
             <p class="">Feb 2022 - Current</p>
             <ul class="ma-4">
@@ -45,11 +58,38 @@
                     and JavaScript Framework (Vue.JS, Nuxt.JS)
                 </li>
             </ul>
-        </div>
-        <div class="mb-4">
-            <p class="mb-4">Skills</p>
-        </div>
-    </div> -->
+        </article>
+        <article class="mb-7">
+            <p class="mb-4 subtitle">Skills</p>
+            <p class="mb-1">Data Analytics</p>
+            <ul class="ma-4">
+                <li                 
+                    v-for="(da, daIndex) in dataAnalyticSkills"
+                    :key="daIndex"
+                >
+                    {{ da.name }}
+                </li>
+            </ul>
+            <p class="mb-1">Frontend Developer</p>
+            <ul class="ma-4">
+                <li                 
+                    v-for="(fe, feIndex) in frontendSkills"
+                    :key="feIndex"
+                >
+                    {{ fe.name }}
+                </li>
+            </ul>
+            <p class="mb-1">General Skills</p>
+            <ul class="ma-4">
+                <li                 
+                    v-for="(ge, geIndex) in generalSkills"
+                    :key="geIndex"
+                >
+                    {{ ge.name }}
+                </li>
+            </ul>
+        </article>
+    </div>
   </div>
 </template>
 
@@ -58,11 +98,47 @@ definePageMeta({
     layout: 'main'
 })
 
+const dataAnalyticSkills = ref([
+    { name: "Spreadsheets (Google Sheets & Microsoft Excel)" },
+    { name: "SQL" },
+    { name: "Data visualization tools (Looker Studio (Google Data Studio), Tableau Public & PowerBI)" },
+    { name: "Python (Beginner)" },
+    { name: "R (Beginner)" } 
+])
+
+const frontendSkills = ref([
+    { name: "HTML" },
+    { name: "CSS (with frameworks e.g. Bootstrap 5, Tailwind & Vuetify)" },
+    { name: "JavaScript" },
+    { name: "Vue.JS (with frameworks e.g. Nuxt.JS)" },
+    { name: "Version Control (Github & Gitlab)" }
+])
+
+const generalSkills = ref([
+    { name: "English (average)" },
+    { name: "Learn quickly in new things" },
+    { name: "Data-driven Planning" },
+    { name: "Data-driven decision making" },
+    { name: "Collaboration" }
+])
+
 </script>
 
 <style scoped lang="scss">
 :deep() {
+    .mypic {
+        object-fit: cover;
+        border-radius: 8px;
+        height: 300px;
+    }
 
+    .name-title {
+        font-size: 34px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
 }
 
 </style>

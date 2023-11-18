@@ -2,20 +2,30 @@
   <div>
     <v-layout class="main-page">
       <v-app-bar prominent :elevation="0">
-        <v-toolbar-title class="text-white">Yossakorn</v-toolbar-title>
+        <v-toolbar-title class="text-white">Tie</v-toolbar-title>
         <v-spacer></v-spacer>
-        <!-- <v-btn icon>
-            <v-icon class="text-white">mdi-linkedin</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="text-white">mdi-github</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="text-white">mdi-email-outline</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="text-white">mdi-cellphone</v-icon>
-          </v-btn> -->
+        <template
+          v-for="(item, index) in linkedList"
+          :key="index"
+        >
+          <NuxtLink
+            v-if="!item.type"
+            :to="item.url"
+            target="_blank"
+          >
+            <v-btn icon>
+              <v-icon class="text-white">{{ item.icon }}</v-icon>
+            </v-btn>
+          </NuxtLink>
+          <a
+            v-else
+            :href="'mailto:'+item.url"
+          >
+            <v-btn icon>
+              <v-icon class="text-white">{{ item.icon }}</v-icon>
+            </v-btn>
+          </a>
+        </template>
       </v-app-bar>
       <v-main>
         <slot />
@@ -24,10 +34,18 @@
   </div>
 </template>
   
-  <script setup lang="ts">
+<script setup lang="ts">
+
+const linkedList = ref([
+  { icon: 'mdi-linkedin', url: 'https://www.linkedin.com/in/ynt29/' },
+  { icon: 'mdi-github', url: "https://github.com/ynt29/" },
+  { icon: 'mdi-email-outline', url: "yossakorntie@gmail.com", type: 'email' },
+  { icon: "mdi-cellphone" }
+])
+
 </script>
   
-  <style scoped lang="scss">
+<style scoped lang="scss">
 @import "@/assets/scss/_variables.scss";
 
 :deep() {
