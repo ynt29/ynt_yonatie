@@ -24,6 +24,9 @@ export default defineNuxtConfig({
     },
     useStylesheet: true
   },
+  routeRules: {
+    '/mainpage': { prerender: true }
+  },
   vite: {
     define: {
       'process.env.DEBUG': false
