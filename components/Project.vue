@@ -1,14 +1,14 @@
 <template>
     <div class="mb-12 d-flex flex-column flex-md-row">
-        <div class="d-flex flex-column w-50">
+        <div class="d-flex flex-column process-width">
             <p class="project-title mb-2">{{ projectDetail.name }}</p>
             <img
                 :src="image"
                 alt="picture"
-                class="mb-2 project-picture" 
+                class="mb-4 project-picture" 
             />
             <div class="mb-2">
-                <span>Type: </span>
+                <span>Type:</span>
                 <v-chip-group>
                     <v-chip
                         v-for="(type, typeIndex) in projectDetail.project_type"
@@ -18,8 +18,8 @@
                     </v-chip>
                 </v-chip-group>
             </div>
-            <div class="mb-2">
-                <span>Tools: </span>
+            <div class="mb-4">
+                <span>Tools:</span>
                 <v-chip-group>
                     <v-chip
                         v-for="(tool, toolIndex) in projectDetail.project_tools"
@@ -29,10 +29,10 @@
                     </v-chip>
                 </v-chip-group>
             </div>
-            <p class="mb-2">{{ projectDetail.description }}</p>
+            <p class="mb-4">{{ projectDetail.description }}</p>
         </div>
-        <div class="mb-2 my-md-12 d-flex flex-column w-50">
-            <p class="mb-2">Process</p>
+        <div class="mb-2 d-flex flex-column justify-md-end process-width">
+            <p>Process</p>
             <ul class="ma-4">
                 <li
                     v-for="(pro, proIndex) in projectDetail.process"
@@ -41,7 +41,7 @@
                     {{ pro.name }}
                 </li>
             </ul>
-            <p class="mb-2">Key Findings:</p>
+            <p>Key Findings:</p>
             <ol class="ma-4">
                 <li
                     v-for="(key, keyIndex) in projectDetail.key_findings"
@@ -50,7 +50,7 @@
                     {{ key.name }}
                 </li>
             </ol>
-            <p class="mb-2">Recommendation</p>
+            <p>Recommendation</p>
             <ul class="ma-4">
                 <li
                     v-for="(rec, recIndex) in projectDetail.recommendation"
@@ -77,12 +77,29 @@ const image = computed(() => {
 <style scoped lang="scss">
 :deep() {
     .project-title {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .project-picture {
         max-width: 300px;
         border-radius: 8px;
+    }
+
+    @media (max-width: 960px) {
+        .process-width {
+            width: 100%
+        }
+
+        ul li,
+        ol li {
+            line-height: 30px;
+        }
+    }
+
+    @media (min-width: 961px) {
+        .process-width {
+            width: 50%;
+        }
     }
 }
 </style>

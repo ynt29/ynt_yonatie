@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-layout class="main-page">
-      <v-app-bar prominent :elevation="0">
-        <v-toolbar-title class="text-white d-inline-flex d-md-none">Tie</v-toolbar-title>
-        <v-toolbar-title class="text-white d-none d-md-inline-flex">Yossakorn Napeang</v-toolbar-title>
+      <v-app-bar prominent :elevation="0" class="px-md-12">
+        <!-- <v-toolbar-title class="text-white d-inline-flex d-md-none">Tie</v-toolbar-title>
+        <v-toolbar-title class="text-white d-none d-md-inline-flex">Yossakorn Napeang</v-toolbar-title> -->
         <v-spacer></v-spacer>
         <template
           v-for="(item, index) in linkedList"
@@ -57,6 +57,16 @@ const linkedList = ref([
 
   .v-toolbar {
     background-color: $tie-blue;
+  }
+
+  .v-btn:hover .v-btn__content i::before {
+    color: #D3D3D3;
+  }
+
+  @media (min-width: 961px) {
+    i {
+      font-size: 32px;
+    }
   }
 }
 </style>
