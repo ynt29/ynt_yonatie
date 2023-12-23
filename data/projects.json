@@ -1,0 +1,64 @@
+{
+    "projects": [
+        {
+            "name": "Personal Financial Dashboard",
+            "project_image": "financial_dashboard.png",
+            "project_type": [
+                {
+                    "name": "Data Analyst"
+                },
+                {
+                    "name": "Data Visualization"
+                }
+            ],
+            "project_tools": [
+                {
+                    "name": "Google Sheets"
+                },
+                {
+                    "name": "Python"
+                },
+                {
+                    "name": "Looker Studio"
+                }
+            ],
+            "description": "personal financial dashboard for tracking, monitoring and analyzing my transaction to plan spending & investment by financial goals.",
+            "process": [
+                {
+                    "name": "Scrape transaction from various sources (In my case, for example, Google Sheets, Notion, Airtable.)."
+                },
+                {
+                    "name": "Specify the date and clean unused transaction (unclassified and duplicate transactions)."
+                },
+                {
+                    "name": "Pivoting to find usable insights."
+                },
+                {
+                    "name": "Make a dashboard to visualize and monitor my cashflow."
+                }
+            ],
+            "key_findings": [
+                {
+                    "name": "Proportion between necessary expenses and unnecessary expenses in 2023 is 63.6 - 36.4%."
+                },
+                {
+                    "name": "71.3% of unnecessary expenses come from spending on certain types of entertainment which asked permission not to mention this name."
+                },
+                {
+                    "name": "Income in July and October was unusually low"
+                }
+            ],
+            "recommendation": [
+                {
+                    "name": "Check transaction data in July and October to see if there were any missing data entries. (July and October received normal salary)"
+                },
+                {
+                    "name": "Reduce unnecessary expenses come from some of entertainment types by at least 20%"
+                },
+                {
+                    "name": "Take the expenses that were cut according to the above and add 15% to the emergency fund and 5% to the investment budget"
+                }
+            ]
+        }
+    ]
+}

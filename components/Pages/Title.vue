@@ -11,8 +11,8 @@
             with a passionate interest in the world of data analytics.
           </p>
         </div>
-        <img src="@/assets/images/img_placeholder.png" alt="mypic" class="mypic mb-2" />
-        <!-- <img src="@/assets/images/mypic.png" alt="mypic" class="mypic mb-2" /> -->
+        <!-- <img src="@/assets/images/img_placeholder.png" alt="mypic" class="mypic mb-2" /> -->
+        <img src="@/assets/images/mypic.png" alt="mypic" class="mypic mb-2" />
       </article>
     </div>
   </ScrollFade>

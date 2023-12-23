@@ -33,14 +33,14 @@
         </div>
         <div class="mb-2 d-flex flex-column justify-md-end process-width">
             <p>Process</p>
-            <ul class="ma-4">
+            <ol class="ma-4">
                 <li
                     v-for="(pro, proIndex) in projectDetail.process"
                     :key="proIndex"
                 >
                     {{ pro.name }}
                 </li>
-            </ul>
+            </ol>
             <p>Key Findings:</p>
             <ol class="ma-4">
                 <li
