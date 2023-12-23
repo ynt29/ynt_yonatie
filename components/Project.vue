@@ -3,7 +3,7 @@
         <div class="d-flex flex-column process-width">
             <p class="project-title mb-2">{{ projectDetail.name }}</p>
             <img
-                :src="image"
+                :src="`_nuxt/assets/images/${projectDetail.project_image}`"
                 alt="picture"
                 class="mb-4 project-picture" 
             />
@@ -67,10 +67,6 @@
 const props = defineProps<{
     projectDetail: any
 }>()
-
-const image = computed(() => {
-    return `_nuxt/assets/images/${props.projectDetail.project_image}`;
-})
 
 </script>
 
