@@ -5,8 +5,10 @@
             <img
                 :src="`_nuxt/assets/images/${projectDetail.project_image}`"
                 alt="picture"
-                class="mb-4 project-picture" 
+                class="mb-4 project-picture"
+                v-if="projectDetail.project_image"
             />
+            <img src="@/assets/images/img_placeholder.png" alt="picture-default" class="project-picture mb-4" v-else />
             <div class="mb-2">
                 <span>Type:</span>
                 <v-chip-group>
